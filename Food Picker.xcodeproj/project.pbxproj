@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		02432D7823764FAF00238BE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02432D7723764FAF00238BE9 /* AppDelegate.swift */; };
 		02432D7A23764FAF00238BE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02432D7923764FAF00238BE9 /* SceneDelegate.swift */; };
-		02432D7C23764FAF00238BE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02432D7B23764FAF00238BE9 /* ContentView.swift */; };
+		02432D7C23764FAF00238BE9 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02432D7B23764FAF00238BE9 /* SearchView.swift */; };
 		02432D7E23764FB200238BE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02432D7D23764FB200238BE9 /* Assets.xcassets */; };
 		02432D8123764FB200238BE9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02432D8023764FB200238BE9 /* Preview Assets.xcassets */; };
 		02432D8423764FB200238BE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02432D8223764FB200238BE9 /* LaunchScreen.storyboard */; };
+		02432D8C2377935D00238BE9 /* YelpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02432D8B2377935D00238BE9 /* YelpService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02432D7423764FAF00238BE9 /* Food Picker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Picker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02432D7723764FAF00238BE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02432D7923764FAF00238BE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		02432D7B23764FAF00238BE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		02432D7B23764FAF00238BE9 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		02432D7D23764FB200238BE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02432D8023764FB200238BE9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		02432D8323764FB200238BE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02432D8523764FB200238BE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02432D8B2377935D00238BE9 /* YelpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				02432D7723764FAF00238BE9 /* AppDelegate.swift */,
 				02432D7923764FAF00238BE9 /* SceneDelegate.swift */,
-				02432D7B23764FAF00238BE9 /* ContentView.swift */,
+				02432D7B23764FAF00238BE9 /* SearchView.swift */,
+				02432D8B2377935D00238BE9 /* YelpService.swift */,
 				02432D7D23764FB200238BE9 /* Assets.xcassets */,
 				02432D8223764FB200238BE9 /* LaunchScreen.storyboard */,
 				02432D8523764FB200238BE9 /* Info.plist */,
@@ -148,7 +151,8 @@
 			files = (
 				02432D7823764FAF00238BE9 /* AppDelegate.swift in Sources */,
 				02432D7A23764FAF00238BE9 /* SceneDelegate.swift in Sources */,
-				02432D7C23764FAF00238BE9 /* ContentView.swift in Sources */,
+				02432D7C23764FAF00238BE9 /* SearchView.swift in Sources */,
+				02432D8C2377935D00238BE9 /* YelpService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
