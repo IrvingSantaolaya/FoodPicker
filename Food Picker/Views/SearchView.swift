@@ -7,21 +7,26 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct SearchView: View {
+    @State var showingWinner = false
     @State var searchTerm = ""
+    @State var location = CLLocationCoordinate2D(latitude: 47.578651, longitude: -122.165176)
+    let locationManager = CLLocationManager()
+    
     var body: some View {
         NavigationView {
             VStack {
                 // Logo
-                Image("Food Picker Logo")
+                Image(Strings.foodPickerLogo)
                     .resizable()
                     .aspectRatio(1, contentMode: .fill)
                     .frame(width: 100, height: 100, alignment: .center)
-                    .cornerRadius(50)
+                    .cornerRadius(10)
                     .padding(.top, 16)
                 // Banner to inform user
-                Text("Let's start by entering what you feel like eating!")
+                Text(Strings.bannerText)
                     .font(.largeTitle)
                     .fontWeight(.regular)
                     .multilineTextAlignment(.center)
@@ -31,9 +36,9 @@ struct SearchView: View {
                 // Underline-style textfield
                 VStack {
                     HStack {
-                        Image(systemName: "magnifyingglass")
+                        Image(systemName: Strings.textfieldSymbol)
                             .foregroundColor(.gray)
-                        TextField("Enter a type of food", text: $searchTerm)
+                        TextField(Strings.textfieldPlaceholder, text: $searchTerm)
                     }
                     Divider()
                 }
@@ -42,19 +47,35 @@ struct SearchView: View {
                 // Button to fire API call
                 Button(action: {
                     // Action search Yelp
-                    
+                    self.showingWinner.toggle()
                 }) {
                     Text("Search")
                         .padding([.leading, .trailing], 16)
                         .padding([.top, .bottom], 8)
-                        .accentColor(Color("lightGreen"))
-                        .background(Color("darkGreen"))
+                        .accentColor(Color(.white))
+                        .background(Color("darkBlue"))
                         .cornerRadius(5)
-                }
+                }.disabled(searchTerm.isEmpty)
                 Spacer()
-                
+            }
+            .sheet(isPresented: $showingWinner) {
+                PickedRestaurant(searchTerm: self.searchTerm, location: self.location)
             }
             
+        }
+        .onAppear {
+            self.setupLocation()
+            
+        }
+    }
+    
+    fileprivate func setupLocation() {
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            guard let currentLocation = self.locationManager.location?.coordinate else {return}
+            self.location = currentLocation
         }
     }
 }

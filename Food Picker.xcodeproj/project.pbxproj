@@ -14,6 +14,9 @@
 		02432D8123764FB200238BE9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02432D8023764FB200238BE9 /* Preview Assets.xcassets */; };
 		02432D8423764FB200238BE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02432D8223764FB200238BE9 /* LaunchScreen.storyboard */; };
 		02432D8C2377935D00238BE9 /* YelpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02432D8B2377935D00238BE9 /* YelpService.swift */; };
+		02432D942378C79300238BE9 /* YelpModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02432D932378C79300238BE9 /* YelpModels.swift */; };
+		02F368D62378DE5100629F8F /* PickedRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F368D52378DE5100629F8F /* PickedRestaurant.swift */; };
+		02F368D82378F28200629F8F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F368D72378F28200629F8F /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		02432D8323764FB200238BE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02432D8523764FB200238BE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02432D8B2377935D00238BE9 /* YelpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpService.swift; sourceTree = "<group>"; };
+		02432D932378C79300238BE9 /* YelpModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpModels.swift; sourceTree = "<group>"; };
+		02F368D52378DE5100629F8F /* PickedRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedRestaurant.swift; sourceTree = "<group>"; };
+		02F368D72378F28200629F8F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +66,10 @@
 			children = (
 				02432D7723764FAF00238BE9 /* AppDelegate.swift */,
 				02432D7923764FAF00238BE9 /* SceneDelegate.swift */,
-				02432D7B23764FAF00238BE9 /* SearchView.swift */,
-				02432D8B2377935D00238BE9 /* YelpService.swift */,
-				02432D7D23764FB200238BE9 /* Assets.xcassets */,
+				02432D8F2378C71F00238BE9 /* Models */,
+				02432D902378C72B00238BE9 /* Views */,
+				02432D912378C73900238BE9 /* Service */,
+				02432D922378C74B00238BE9 /* Resources */,
 				02432D8223764FB200238BE9 /* LaunchScreen.storyboard */,
 				02432D8523764FB200238BE9 /* Info.plist */,
 				02432D7F23764FB200238BE9 /* Preview Content */,
@@ -76,6 +83,40 @@
 				02432D8023764FB200238BE9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		02432D8F2378C71F00238BE9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				02432D932378C79300238BE9 /* YelpModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		02432D902378C72B00238BE9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				02432D7B23764FAF00238BE9 /* SearchView.swift */,
+				02F368D52378DE5100629F8F /* PickedRestaurant.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		02432D912378C73900238BE9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				02432D8B2377935D00238BE9 /* YelpService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		02432D922378C74B00238BE9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				02432D7D23764FB200238BE9 /* Assets.xcassets */,
+				02F368D72378F28200629F8F /* Strings.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,8 +192,11 @@
 			files = (
 				02432D7823764FAF00238BE9 /* AppDelegate.swift in Sources */,
 				02432D7A23764FAF00238BE9 /* SceneDelegate.swift in Sources */,
+				02F368D62378DE5100629F8F /* PickedRestaurant.swift in Sources */,
 				02432D7C23764FAF00238BE9 /* SearchView.swift in Sources */,
+				02432D942378C79300238BE9 /* YelpModels.swift in Sources */,
 				02432D8C2377935D00238BE9 /* YelpService.swift in Sources */,
+				02F368D82378F28200629F8F /* Strings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
