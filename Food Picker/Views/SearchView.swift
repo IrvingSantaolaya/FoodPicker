@@ -74,7 +74,10 @@ struct SearchView: View {
         self.locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
-            guard let currentLocation = self.locationManager.location?.coordinate else {return}
+            guard let currentLocation = self.locationManager.location?.coordinate else {
+                #warning("TODO: Handle error")
+                return
+            }
             self.location = currentLocation
         }
     }

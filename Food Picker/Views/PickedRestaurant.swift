@@ -8,25 +8,38 @@
 
 import SwiftUI
 import CoreLocation
+import Combine
 
 struct PickedRestaurant: View {
     var searchTerm: String
     var location: CLLocationCoordinate2D
-    @State var winner = ""
-    @State var yelpService = YelpService()
+    @ObservedObject var viewModel = PickedRestaurantViewModel()
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                Text(self.winner)
+                Text("You should eat at:")
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                    .multilineTextAlignment(.leading)
+                Image(uiImage: self.viewModel.imageData != nil ? UIImage(data: self.viewModel.imageData!)! : UIImage())
+                    .resizable()
+                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.4)
+                    .aspectRatio(contentMode: .fill)
+                Text(self.viewModel.businesses[0].name)
+                    .font(.headline)
+                    .fontWeight(.heavy)
+                ScrollView {
+                    HStack {
+                        // for each
+                        Image(systemName: "apple")
+                    }
+                }
+                Spacer()
             }
         }
         .onAppear {
-            self.yelpService.fetchRestaurants(searchTerm: self.searchTerm, location: self.location) { (businesses, error) in
-                guard let businesses = businesses else {
-                    return
-                }
-                self.winner = businesses[0].name
-            }
+            self.viewModel.getRestaurants(searchTerm: self.searchTerm, location: self.location)
         }
     }
 }
