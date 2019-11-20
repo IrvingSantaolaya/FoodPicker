@@ -16,34 +16,31 @@ struct SearchView: View {
     let locationManager = CLLocationManager()
     
     var body: some View {
-        NavigationView {
             VStack {
-                // Logo
-                Image(Strings.foodPickerLogo)
-                    .resizable()
-                    .aspectRatio(1, contentMode: .fill)
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .cornerRadius(10)
-                    .padding(.top, 16)
-                // Banner to inform user
                 Text(Strings.bannerText)
                     .font(.largeTitle)
-                    .fontWeight(.regular)
+                    .fontWeight(.heavy)
                     .multilineTextAlignment(.center)
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding([.leading, .trailing], 16)
+                    .foregroundColor(.white)
                 // Underline-style textfield
                 VStack {
                     HStack {
                         Image(systemName: Strings.textfieldSymbol)
-                            .foregroundColor(.gray)
-                        TextField(Strings.textfieldPlaceholder, text: $searchTerm)
+                        .foregroundColor(.white)
+                        ZStack(alignment: .leading) {
+                            if searchTerm.isEmpty { Text(Strings.textfieldPlaceholder).foregroundColor(.white) }
+                            TextField("", text: $searchTerm)
+                                .foregroundColor(.white)
+                            
+                        }
                     }
                     Divider()
+                        .foregroundColor(.white)
                 }
                 .padding()
-                .navigationBarTitle("Food Picker", displayMode: .inline)
                 // Button to fire API call
                 Button(action: {
                     // Action search Yelp
@@ -53,16 +50,16 @@ struct SearchView: View {
                         .padding([.leading, .trailing], 16)
                         .padding([.top, .bottom], 8)
                         .accentColor(Color(.white))
-                        .background(Color("darkBlue"))
+                        .background(Color(.brown))
                         .cornerRadius(5)
                 }.disabled(searchTerm.isEmpty)
                 Spacer()
             }
+            .background(Image("background1"))
             .sheet(isPresented: $showingWinner) {
                 PickedRestaurant(searchTerm: self.searchTerm, location: self.location)
             }
             
-        }
         .onAppear {
             self.setupLocation()
             

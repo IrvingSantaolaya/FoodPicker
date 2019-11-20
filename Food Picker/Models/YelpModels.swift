@@ -8,13 +8,23 @@
 
 import Foundation
 
-struct YelpResponse: Identifiable, Codable {
-    var businesses: [Business]
-    let id = UUID()
+struct YelpResponse: Codable {
+    var businesses: [Business]?
 }
 struct Business: Identifiable, Codable {
     var name: String
     var image_url: String
     var url: String
-    let id = UUID()
+    var id: String
+    var rating: Double
+    var price: String?
+    var review_count: Double
+    var phone: String
+    var distance: Double
+    var coordinates: Coordinates
+}
+
+struct Coordinates: Codable {
+    var latitude: Double
+    var longitude: Double
 }
