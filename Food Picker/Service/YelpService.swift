@@ -22,7 +22,7 @@ struct YelpService{
             #warning("TODO: Handle error")
             return
         }
-        
+        print(url)
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue(Strings.headerValue, forHTTPHeaderField: Strings.headerKey)
