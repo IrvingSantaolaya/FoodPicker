@@ -7,3 +7,5 @@ The app searches through Yelp, using your keyword, and randomly spits out a rest
 It filters by rating, distance, and Open Now.
 
 ## Screenshots
+## Screenshots
+![](<Thumbnails/firstImage.png>) ![](<Thumbnails/secondImage.PNG>)
